@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Boid : MonoBehaviour
 {
-    public Simulation simulation { get; set; }
+    public Simulation simulation ;//{ get; set; }
     public Param param { get; set; }
     public Vector3 pos { get; private set; }
     public Vector3 velocity { get; private set; }
@@ -18,22 +18,22 @@ public class Boid : MonoBehaviour
 
     void Update()
     {
-        // ‹ß—×‚ÌŒÂ‘Ì‚ğ’T‚µ‚Ä neighbors ƒŠƒXƒg‚ğXV
+        // ï¿½ß—×‚ÌŒÂ‘Ì‚ï¿½Tï¿½ï¿½ï¿½ï¿½ neighbors ï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Xï¿½V
         UpdateNeighbors();
 
-        // •Ç‚É“–‚½‚è‚»‚¤‚É‚È‚Á‚½‚çŒü‚«‚ğ•Ï‚¦‚é
+        // ï¿½Ç‚É“ï¿½ï¿½ï¿½ï¿½è‚»ï¿½ï¿½ï¿½É‚È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
         UpdateWalls();
 
-        // ‹ß—×‚ÌŒÂ‘Ì‚©‚ç—£‚ê‚é
+        // ï¿½ß—×‚ÌŒÂ‘Ì‚ï¿½ï¿½ç—£ï¿½ï¿½ï¿½
         UpdateSeparation();
 
-        // ‹ß—×‚ÌŒÂ‘Ì‚Æ‘¬“x‚ğ‡‚í‚¹‚é
+        // ï¿½ß—×‚ÌŒÂ‘Ì‚Æ‘ï¿½ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½í‚¹ï¿½ï¿½
         UpdateAlignment();
 
-        // ‹ß—×‚ÌŒÂ‘Ì‚Ì’†S‚ÉˆÚ“®‚·‚é
+        // ï¿½ß—×‚ÌŒÂ‘Ì‚Ì’ï¿½ï¿½Sï¿½ÉˆÚ“ï¿½ï¿½ï¿½ï¿½ï¿½
         UpdateCohesion();
 
-        // ã‹L 4 ‚Â‚ÌŒ‹‰ÊXV‚³‚ê‚½ accel ‚ğ velocity ‚É”½‰f‚µ‚ÄˆÊ’u‚ğ“®‚©‚·
+        // ï¿½ï¿½L 4 ï¿½Â‚ÌŒï¿½ï¿½ÊXï¿½Vï¿½ï¿½ï¿½ê‚½ accel ï¿½ï¿½ velocity ï¿½É”ï¿½ï¿½fï¿½ï¿½ï¿½ÄˆÊ’uï¿½ğ“®‚ï¿½ï¿½ï¿½
         UpdateMove();
     }
     void UpdateMove()
